@@ -1,6 +1,6 @@
+using System.Reflection;
 using LocalUp.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 namespace LocalUp.Infrastructure.Persistence
 {
