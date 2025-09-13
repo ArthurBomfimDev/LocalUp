@@ -1,0 +1,74 @@
+## Ignore para projetos .NET e Visual Studio
+
+# Arquivos de build
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Arquivos do Rider
+.idea/
+
+# Arquivos do VSCode
+.vscode/
+
+# Arquivos do pacote NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+project.nuget.cache
+*.nuget.props
+*.nuget.targets
+
+# Arquivos de log
+*.log
+
+# Arquivos do Teste
+TestResults/
+*.VisualState.xml
+*.vsp
+*.vspx
+*.vspscc
+*.vssscc
+*.coverage
+*.coveragexml
+*.codecoverage
+
+# Configuração temporária
+.vs/
+_ReSharper*/
+*.DotSettings.user
+*.dbmdl
+
+# Backup
+*.bak
+*.orig
+
+# Dados sensíveis ou locais
+secrets.json
+
+# Diretórios ocultos comuns
+**/Thumbs.db
+**/Desktop.ini
+**/*.DS_Store
+
+# Diretórios criados automaticamente
+Generated_Code/
+
+# Sistema operacional
+ehthumbs.db
+Icon?
+.DS_Store
+._*
+
+# Logs de dependências
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretórios específicos da sua estrutura (opcional)
+src/InfiniteMonkey.*/*/bin/
+src/InfiniteMonkey.*/*/obj/
