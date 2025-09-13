@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Core\LocalUp.Application\LocalUp.Application.csproj" />
   </ItemGroup>
 
 </Project>
