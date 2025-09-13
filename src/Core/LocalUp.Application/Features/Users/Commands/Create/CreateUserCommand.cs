@@ -1,5 +1,5 @@
 using LocalUp.Application.DTOs;
-using LocalUp.Domain.Entities.Enum;
+using LocalUp.Domain.Enums;
 using MediatR;
 
 namespace LocalUp.Application.Features.Users.Commands.Create

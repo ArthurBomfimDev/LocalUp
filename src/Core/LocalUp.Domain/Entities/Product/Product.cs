@@ -41,6 +41,11 @@ public class Product : BaseEntity<Product>
                                  int stock, long categoryId, long brandId)
     {
         if (string.IsNullOrWhiteSpace(title)) throw new ArgumentNullException(nameof(title));
+        if (title.Length > 200) throw new ArgumentException("Titulo passa de 200 caracteres");
+
+        if (string.IsNullOrWhiteSpace(description)) throw new ArgumentNullException(nameof(description));
+        if (description.Length > 1000) throw new ArgumentException("Descricao passa de 1000 caracteres");
+
         if (price < 0) throw new ArgumentOutOfRangeException(nameof(price));
         if (discountPercent < 0 || discountPercent >= 1) throw new ArgumentOutOfRangeException(nameof(discountPercent));
         if (weightKg <= 0) throw new ArgumentOutOfRangeException(nameof(weightKg));

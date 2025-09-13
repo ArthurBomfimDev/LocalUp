@@ -1,4 +1,4 @@
-using LocalUp.Domain.Entities.Enum;
+using LocalUp.Domain.Enums;
 
 namespace LocalUp.Application.DTOs
 {

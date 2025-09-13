@@ -1,5 +1,5 @@
 ﻿using LocalUp.Domain.Entities.Base;
-using LocalUp.Domain.Entities.Enum;
+using LocalUp.Domain.Enums;
 
 namespace LocalUp.Domain.Entities;
 
@@ -29,9 +29,16 @@ public class User : BaseEntity<User>
                               IEnumerable<UserAddress> address)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
+        if (name.Length > 100) throw new ArgumentException("Nome passa de 100 caracteres");
+
         if (string.IsNullOrWhiteSpace(email)) throw new ArgumentNullException(nameof(email));
+        if (email.Length > 100) throw new ArgumentException("Email passa de 150 caracteres");
+
         if (string.IsNullOrWhiteSpace(passwordHash)) throw new ArgumentNullException(nameof(passwordHash));
+        if (passwordHash.Length > 200) throw new ArgumentException("Senha passa de 200 caracteres");
+
         if (string.IsNullOrWhiteSpace(phone)) throw new ArgumentNullException(nameof(phone));
+        if (phone.Length > 15) throw new ArgumentException("Telefone passa de 15 caracteres");
 
         var addresses = address?.Select(dto => UserAddress.Create(dto.Street, dto.City, dto.State, dto.Country, dto.PostalCode, dto.Number, dto.Complement)).ToList() ?? new List<UserAddress>();
         return new User(name, email, passwordHash, role, phone, addresses);
