@@ -1,6 +1,6 @@
 ﻿using LocalUp.Domain.Entities.Base;
 
-namespace LocalUp.Domain.Entities.Cart;
+namespace LocalUp.Domain.Entities;
 
 public class CartItem : BaseEntity<CartItem>
 {

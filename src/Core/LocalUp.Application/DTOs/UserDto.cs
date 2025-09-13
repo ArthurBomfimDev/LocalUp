@@ -8,7 +8,7 @@ namespace LocalUp.Application.DTOs
         public string Name { get; set; }
         public string Email { get; set; }
         public UserRole Role { get; set; }
-        public IEnumerable<string> Phones { get; set; }
+        public string Phone { get; set; }
         public IEnumerable<UserAddressDto> Addresses { get; set; }
     }
 }

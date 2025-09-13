@@ -1,4 +1,4 @@
-using LocalUp.Domain.Entities.WishList;
+using LocalUp.Domain.Entities;
 
 namespace LocalUp.Application.Interfaces.Repository.Write
 {

@@ -1,6 +1,6 @@
 ﻿using LocalUp.Domain.Entities.Base;
 
-namespace LocalUp.Domain.Entities.Category;
+namespace LocalUp.Domain.Entities;
 
 public class Category : BaseEntity<Category>
 {

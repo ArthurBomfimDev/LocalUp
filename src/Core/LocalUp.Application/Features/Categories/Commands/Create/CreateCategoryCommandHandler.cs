@@ -1,6 +1,6 @@
 using LocalUp.Application.Interfaces.Repository.Write;
 using LocalUp.Application.Interfaces.UnitOfWork;
-using LocalUp.Domain.Entities.Category;
+using LocalUp.Domain.Entities;
 using MediatR;
 
 namespace LocalUp.Application.Features.Categories.Commands.Create
