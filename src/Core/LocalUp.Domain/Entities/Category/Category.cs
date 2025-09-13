@@ -21,6 +21,11 @@ public class Category : BaseEntity<Category>
     public static Category Create(string name, string description, long? parentCategoryId)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
+        if (name.Length > 100) throw new ArgumentException("Nome passa de 100 caracteres");
+
+        if (string.IsNullOrWhiteSpace(description)) throw new ArgumentNullException(nameof(description));
+        if (description.Length > 500) throw new ArgumentException("Descrição passa de 500 caracteres");
+
         return new Category(name, description, parentCategoryId);
     }
     public void Update(string name, string description, long? parentCategoryId)
