@@ -26,20 +26,20 @@ public class User : BaseEntity<User>
 
     public static User Create(string name, string email, string passwordHash, UserRole role,
                               string phone,
-                              IEnumerable<UserAddressDTO> addressDtos)
+                              IEnumerable<UserAddress> address)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
         if (string.IsNullOrWhiteSpace(email)) throw new ArgumentNullException(nameof(email));
         if (string.IsNullOrWhiteSpace(passwordHash)) throw new ArgumentNullException(nameof(passwordHash));
         if (string.IsNullOrWhiteSpace(phone)) throw new ArgumentNullException(nameof(phone));
-        
-        var addresses = addressDtos?.Select(dto => UserAddress.Create(dto.Street, dto.City, dto.State, dto.Country, dto.PostalCode, dto.Number, dto.Complement)).ToList() ?? new List<UserAddress>();
+
+        var addresses = address?.Select(dto => UserAddress.Create(dto.Street, dto.City, dto.State, dto.Country, dto.PostalCode, dto.Number, dto.Complement)).ToList() ?? new List<UserAddress>();
         return new User(name, email, passwordHash, role, phone, addresses);
     }
 
     public void Update(string name, string email, string passwordHash, UserRole role,
                        string phone,
-                       IEnumerable<UserAddressDTO> addressDtos)
+                       IEnumerable<UserAddress> address)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
         if (string.IsNullOrWhiteSpace(email)) throw new ArgumentNullException(nameof(email));
@@ -51,7 +51,7 @@ public class User : BaseEntity<User>
         Role = role;
         Phone = phone;
 
-        var newAddresses = addressDtos?.Select(dto => UserAddress.Create(dto.Street, dto.City, dto.State, dto.Country, dto.PostalCode, dto.Number, dto.Complement)).ToList() ?? new List<UserAddress>();
+        var newAddresses = address?.Select(dto => UserAddress.Create(dto.Street, dto.City, dto.State, dto.Country, dto.PostalCode, dto.Number, dto.Complement)).ToList() ?? new List<UserAddress>();
         Addresses = newAddresses;
 
         SetChangedDate();
