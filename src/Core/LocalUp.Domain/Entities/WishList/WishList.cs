@@ -1,6 +1,6 @@
 ﻿using LocalUp.Domain.Entities.Base;
 
-namespace LocalUp.Domain.Entities.WishList;
+namespace LocalUp.Domain.Entities;
 
 public class WishList : BaseEntity<WishList>
 {

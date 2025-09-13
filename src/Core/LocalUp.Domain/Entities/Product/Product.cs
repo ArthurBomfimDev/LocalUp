@@ -1,6 +1,5 @@
 ﻿using LocalUp.Domain.Entities;
 using LocalUp.Domain.Entities.Base;
-using LocalUp.Domain.Entities.Category;
 
 public class Product : BaseEntity<Product>
 {

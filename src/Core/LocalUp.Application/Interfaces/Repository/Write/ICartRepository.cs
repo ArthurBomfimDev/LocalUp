@@ -1,4 +1,4 @@
-using LocalUp.Domain.Entities.Cart;
+using LocalUp.Domain.Entities;
 
 namespace LocalUp.Application.Interfaces.Repository.Write
 {
