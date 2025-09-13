@@ -7,6 +7,7 @@ namespace LocalUp.Infrastructure.Persistence
     public class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<UserAddress> UserAddress { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }

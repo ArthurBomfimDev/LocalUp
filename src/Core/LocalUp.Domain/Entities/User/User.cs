@@ -12,6 +12,8 @@ public class User : BaseEntity<User>
     public string Phone { get; private set; }
     public List<UserAddress> Addresses { get; private set; }
 
+    private User() { }
+
     private User(string name, string email, string passwordHash, UserRole role,
                  string phone, List<UserAddress> addresses)
         : base()
