@@ -1,4 +1,5 @@
 using LocalUp.Application.Interfaces.Repository.Read;
+using LocalUp.Application.Interfaces.Repository.Read.Base;
 using LocalUp.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 

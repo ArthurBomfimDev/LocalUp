@@ -1,5 +1,6 @@
 using LocalUp.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace LocalUp.Infrastructure.Persistence
 {
@@ -20,35 +21,8 @@ namespace LocalUp.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Cart>()
-                .HasMany(c => c.Items)
-                .WithOne(i => i.Cart)
-                .HasForeignKey(i => i.CartId);
-
-            modelBuilder.Entity<WishList>()
-                .HasMany(w => w.Items)
-                .WithOne(i => i.WishList)
-                .HasForeignKey(i => i.WishListId);
-
-            modelBuilder.Entity<Category>()
-                .HasOne(c => c.ParentCategory)
-                .WithMany()
-                .HasForeignKey(c => c.ParentCategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Product>()
-                .HasOne(p => p.Category)
-                .WithMany(c => c.Products)
-                .HasForeignKey(p => p.CategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Product>()
-                .HasOne(p => p.Brand)
-                .WithMany(b => b.Products)
-                .HasForeignKey(p => p.BrandId)
-                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
