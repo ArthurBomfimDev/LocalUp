@@ -28,6 +28,7 @@ public class CategoryConfiguration : BaseEntityConfiguration<Category>
         builder.HasOne(c => c.ParentCategory)
             .WithMany()
             .HasForeignKey(c => c.ParentCategoryId)
+            .IsRequired(false)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasMany(c => c.Products)

@@ -7,9 +7,10 @@ public class Category : BaseEntity<Category>
     public string Name { get; private set; }
     public string Description { get; private set; }
     public long? ParentCategoryId { get; private set; }
-    public Category ParentCategory { get; private set; }
+    public Category? ParentCategory { get; private set; }
     public List<Product> Products { get; private set; }
 
+    public Category() { }
     private Category(string name, string description, long? parentCategoryId)
         : base()
     {
